@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import './App.css';
+import Game from './reducers/reducer.js'
+import StartPage from './pages/startPage';
+import GamePage from './pages/gamePage';
+import SummaryPage from './pages/summaryPage';
 
-function App() {
+const reducer = combineReducers({
+  Game: Game.reducer
+})
+
+const store = configureStore({ reducer })
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path='/' element={<StartPage/>} />
+          <Route path='/game' element={<GamePage />} />
+          <Route path='summary' element={<SummaryPage />} />
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 
