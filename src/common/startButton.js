@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 const Button = styled.button`
   padding: 1em 2.5em;
@@ -13,16 +12,10 @@ const Button = styled.button`
   color: white;
 `
 
-const linkStyle = {
-  textDecoration: 'none',
-  color: '#97BFB4',
-}
-
-
-export const HeaderButton = ({link, title, color}) => {
+export const StartButton = ({title}) => {
   return (
-    <Button className={color}>
-      <Link style={linkStyle} to={link}>{title}</Link>
+    <Button>
+      {title}
     </Button>
   );
 }

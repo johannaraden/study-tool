@@ -1,7 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import thunk from 'redux-thunk'
+import { combineReducers, createStore, applyMiddleware } from '@reduxjs/toolkit'
 import './App.css';
 import Game from './reducers/reducer.js'
 import StartPage from './pages/startPage';
@@ -12,7 +13,13 @@ const reducer = combineReducers({
   Game: Game.reducer
 })
 
-const store = configureStore({ reducer })
+// const store = configureStore({ reducer })
+const store = createStore(reducer, applyMiddleware(thunk))
+
+store.subscribe(() => {
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()));
+})
+
 
 const App = () => {
   return (
