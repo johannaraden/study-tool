@@ -14,8 +14,8 @@ const Button = styled.button`
 
 export const StartButton = ({title}) => {
   return (
-    <Button>
+    <button class="nes-btn is-primary">
       {title}
-    </Button>
+    </button>
   );
 }

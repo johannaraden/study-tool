@@ -1,28 +1,16 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
-const Button = styled.button`
-  padding: 1em 2.5em;
-  border-radius: 30px;
-  text-transform: uppercase;
-  border: none;
-  place-content: space-evenly;
-  text-decoration: none;
-  background-color: ${props => props.active ? 'darkred' : '#F5EEDC'}
-  color: white;
-`
+import '../App.css'
 
 const linkStyle = {
   textDecoration: 'none',
-  color: '#97BFB4',
+  color: 'white',
 }
 
-
-export const HeaderButton = ({link, title, color}) => {
+export const HeaderButton = ({link, title}) => {
   return (
-    <Button className={color}>
+    <button className='nes-btn is-primary header-button'>
       <Link style={linkStyle} to={link}>{title}</Link>
-    </Button>
+    </button>
   );
 }

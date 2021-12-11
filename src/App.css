@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.frame {
+  /* background-color: aliceblue; */
+  margin: 4em;
+}
+
+.header-button {
+  place-content: space-evenly;
+}
+
+.header-frame {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.submit-button:hover {
+  background-color: #209cee;
+}
+
+.instructions-container {
+  padding: 5em;
+}

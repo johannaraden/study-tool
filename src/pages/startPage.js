@@ -1,18 +1,19 @@
 import React from 'react'
-import { Frame } from '../common/frame.js'
 import { HeaderButton } from '../common/gameHeader.js'
-import { HeaderFrame } from '../common/headerFrame.js'
 
 const StartPage = () => {
   return (
-    <Frame>
-      <HeaderFrame>
+    <section className='nes-container with-title is-center frame'>
+      <p className="title">Conversation game</p>
+      <div className='nes-container header-frame'>
         <HeaderButton link='/game' title='Game'/>
         <HeaderButton link='/summary' title='Summary'/>
-      </HeaderFrame>
-      <p>Welcome to this simple conversation game!</p>
-      <p>Listen to the instructions given by your coach and go to "game" when ready.</p>
-    </Frame>
+      </div>
+      <span class="nes-text is-warning intro-text">Welcome to this simple conversation game!</span>
+      <div className="nes-container is-rounded is-dark instructions-container">
+        <p>Listen to the instructions given by your coach and go to "game" when ready.</p>
+      </div>
+    </section>
   );
 }
 

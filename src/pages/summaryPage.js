@@ -1,19 +1,17 @@
 import React from 'react'
-import { Frame } from '../common/frame.js'
 import { HeaderButton } from '../common/gameHeader.js'
-import { HeaderFrame } from '../common/headerFrame.js'
 
 
 const SummaryPage = () => {
   return (
-    <Frame>
-      <HeaderFrame>
+    <section className='nes-container with-title is-center frame'>
+      <p class="title">Conversation game</p>
+      <div className='nes-container header-frame'>
         <HeaderButton link='/' title='Start'/>
         <HeaderButton link='/game' title='Game'/>
-      </HeaderFrame>
+      </div>
       <p>This is summary page</p>
-      <img src="https://www.api.multiavatar.com/johanna.svg" />
-    </Frame>
+    </section>
   );
 }
 

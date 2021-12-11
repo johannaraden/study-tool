@@ -1,15 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { Frame } from '../common/frame.js'
 import { HeaderButton } from '../common/gameHeader.js'
-import { HeaderFrame } from '../common/headerFrame.js'
 import { SetTimer } from '../components/setTimer.js'
 import { SetPlayers } from '../components/setPlayers.js'
 import { PlayerProfile } from '../common/profile.js'
 
 const GameHeadline = styled.h1`
-  color: white;
+  // color: white;
   text-align: center;
   margin: 1em;
 `
@@ -38,22 +36,40 @@ const GamePage = () => {
 
 
   return (
-    <Frame>
-      <HeaderFrame>
+    <section className='nes-container with-title is-center frame'>
+      <p class="title">Conversation game</p>
+      <div className='nes-container header-frame'>
         <HeaderButton color='green' link='/' title='Start'/>
         <HeaderButton link='/summary' title='Summary'/>
-      </HeaderFrame>
+      </div>
       <GameHeadline>this is game page</GameHeadline>
       <GameInstructions>put in amount of time and names of the players in order to start the game</GameInstructions>
       <SetPlayers />
       <SetTimer />
-      <TimerContainer>{Timer.amountOfTime}</TimerContainer>
+        <section className="message-list">
+        <section className="message -left">
+          <i class="nes-bcrikko"></i>
+          {/* <!-- Balloon --> */}
+        <div className="nes-balloon from-left">
+        <p>Get ready!</p>
+        </div>
+      </section>
+      {Timer.amountOfTime && 
+      <section className="message -right">
+      {/* <!-- Balloon --> */}
+      <div className="nes-balloon from-right is-dark">
+        <p>Timer set to: {Timer.amountOfTime} minutes</p>
+      </div>
+      <i class="nes-bcrikko"></i>
+    </section>
+      }
+      </section>
       <PlayerContainer>
         {playerList.items.map((item, index, profilePicture) => (
           <PlayerProfile key={index} name={item.name} profilePicture={profilePicture}/>
         ))}
       </PlayerContainer>
-    </Frame>
+    </section>
   );
 }
 
