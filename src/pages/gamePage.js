@@ -16,20 +16,21 @@ const GameInstructions = styled(GameHeadline)`
 `
 const PlayerContainer = styled.div`
   display: flex;
-`
-const TimerContainer = styled.div`
-  color: #617a74;
-  width: 5em;
-  height: 5em;
-  border-radius: 200px; 
-  background-color: #F5EEDC;
-  display: flex;
-  justify-content: center;
-  color: #617a74;
-  align-content: center;
   flex-wrap: wrap;
-  margin: 3em auto;
 `
+// const TimerContainer = styled.div`
+//   color: #617a74;
+//   width: 5em;
+//   height: 5em;
+//   border-radius: 200px; 
+//   background-color: #F5EEDC;
+//   display: flex;
+//   justify-content: center;
+//   color: #617a74;
+//   align-content: center;
+//   flex-wrap: wrap;
+//   margin: 3em auto;
+// `
 const GamePage = () => {
   const playerList = useSelector((store) => store.Game.players)
   const Timer = useSelector((store) => store.Game.timer)
@@ -65,8 +66,8 @@ const GamePage = () => {
       }
       </section>
       <PlayerContainer>
-        {playerList.items.map((item, index, profilePicture) => (
-          <PlayerProfile key={index} name={item.name} profilePicture={profilePicture}/>
+        {playerList.items.map((item, index) => (
+          <PlayerProfile key={index} name={item.name} profilePicture={item.profilePicture}/>
         ))}
       </PlayerContainer>
     </section>

@@ -35,8 +35,7 @@ const Name = styled.h3`
 export const PlayerProfile = ({name, profilePicture}) => {
   return (
     <Section>
-      <Picture alt='profile picture' src='https://www.fillmurray.com/200/200' style={{backgroundImage: profilePicture}}></Picture>
-      {/* <img src='https://api.multiavatar.com/johanna' alt={name} width="72" height="72" /> */}
+      <Picture alt='profile picture' src={profilePicture} style={{backgroundImage: profilePicture}}></Picture>
       <Name>{name}</Name>
       <StartButton title='start'/>
     </Section>

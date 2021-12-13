@@ -8,10 +8,7 @@ const initialState = {
     amountOfTime: 0,
   },
   players: {
-    items: [
-      { name: 'Alena', profilePicture: 'https://api.multiavatar.com/johanna' },
-      // { name: 'Bob', score: 0, itemIndex: 1, isTurn: false, profilePicture:null }
-    ]
+    items: []
   }
 }
 
